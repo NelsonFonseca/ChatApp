@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-button slot="end" fill="clear" (click)="presentActionSheet()">
+      <ion-icon style="color: #fff;" name="menu"></ion-icon>
+    </ion-button>
+    <ion-title>
+      Chateando
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+      <ion-item *ngFor="let chat of chatRooms" (click)="openChat(chat)">
+        <ion-avatar slot="start">
+          <ion-img src="{{chat.img}}"></ion-img>
+        </ion-avatar>
+        <ion-label>
+          <h2><b>{{chat.name}}</b> </h2>
+          <p>{{chat.descripcion}}</p>
+        </ion-label>
+      </ion-item>
+  </ion-list>
+</ion-content>
